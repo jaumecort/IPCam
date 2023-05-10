@@ -2,7 +2,7 @@ from zeep import Client
 from zeep.exceptions import Fault
 from zeep.wsse.username import UsernameToken
 
-from PySide6.QtCore import Qt, QObject, Slot
+from PyQt5.QtCore import Qt, QObject
 
 class OnvifPtzController(QObject):
     def __init__(self, url, username, password):
@@ -19,7 +19,6 @@ class OnvifPtzController(QObject):
         #return Client(self.url, wsse=auth)
         return 0
 
-    @Slot()
     def move(self, pan_speed, tilt_speed, zoom_speed):
         # Envía un comando de movimiento de PTZ a la cámara ONVIF
         try:

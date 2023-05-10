@@ -1,8 +1,9 @@
-from PySide6.QtCore import Qt, QObject, Slot
+from PyQt5.QtCore import Qt, QObject
 
 class ejemp(QObject):
     def __init__(self):
         QObject.__init__(self)
-    @Slot()
+
+
     def saludar(self):
         print('ola')

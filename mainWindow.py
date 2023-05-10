@@ -1,9 +1,9 @@
 # This Python file uses the following encoding: utf-8
 import sys
 from pathlib import Path
-from PySide6.QtCore import Qt, QObject, Slot
-from PySide6.QtGui import QGuiApplication
-from PySide6.QtQml import QQmlApplicationEngine
+from PyQt5.QtCore import Qt, QObject
+from PyQt5.QtGui import QGuiApplication
+from PyQt5.QtQml import QQmlApplicationEngine
 
 import onvif.OnvifPtzController as ptz
 import onvif.ejem as onvif
@@ -14,7 +14,6 @@ def moveCameraUp():
 class ejemp(QObject):
     def __init__(self):
         QObject.__init__(self)
-    @Slot()
     def saludar(self):
         print('ola')
 
@@ -28,7 +27,7 @@ if __name__ == "__main__":
     engine.rootContext().setContextProperty('onvif_controller', controller)
     engine.rootContext().setContextProperty('ej', ej)
     qml_file = Path(__file__).resolve().parent / "qml/main.qml"
-    engine.load(qml_file)
+    engine.load("qml/main.qml")
     if not engine.rootObjects():
         sys.exit(-1)
     sys.exit(app.exec())
