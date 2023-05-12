@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:sc="http://www.w3.org/2003/05/soap-encoding" xmlns:d="http://schemas.xmlsoap.org/ws/2005/04/discovery" xmlns:a="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:dn="http://www.onvif.org/ver10/network/wsdl" xmlns:tds="http://www.onvif.org/ver10/device/wsdl">
+    <s:Header>
+        <a:MessageID>uuid:72ce807b-f3c8-4be2-ab1d-35864b555eb9</a:MessageID>
+        <a:To>urn:schemas-xmlsoap-org:ws:2005:04:discovery</a:To>
+        <a:Action>http://schemas.xmlsoap.org/ws/2005/04/discovery/ProbeMatches</a:Action>
+        <a:RelatesTo>12e7796f-7731-4a4c-9320-823f8b85e20c</a:RelatesTo>
+    </s:Header>
+    <s:Body>
+        <d:ProbeMatches>
+            <d:ProbeMatch>
+                <a:EndpointReference>
+                    <a:Address>uuid:a0687152-e79b-417e-91fc-c7d5080c2afa</a:Address>
+                </a:EndpointReference>
+                <d:Types>dn:NetworkVideoTransmitter tds:Device</d:Types>
+                <d:Scopes>onvif://www.onvif.org/location/country/china onvif://www.onvif.org/name/LC onvif://www.onvif.org/hardware/IPC-A46L-D onvif://www.onvif.org/Profile/Streaming onvif://www.onvif.org/type/Network_Video_Transmitter onvif://www.onvif.org/extension/unique_identifier/1</d:Scopes>
+                <d:XAddrs>http://192.168.88.253/onvif/device_service</d:XAddrs>
+                <d:MetadataVersion>1</d:MetadataVersion>
+            </d:ProbeMatch>
+        </d:ProbeMatches>
+    </s:Body>
+</s:Envelope>'
