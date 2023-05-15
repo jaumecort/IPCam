@@ -1,33 +1,30 @@
 # This Python file uses the following encoding: utf-8
-import sys
-from pathlib import Path
-from PyQt5.QtCore import Qt, QObject
-from PyQt5.QtGui import QGuiApplication
-from PyQt5.QtQml import QQmlApplicationEngine
+from PyQt6.QtWidgets import *
 
-import onvif.OnvifPtzController as ptz
-import onvif.ejem as onvif
+from onvif import ONVIFCamera
+from development.PTZController.PTZController import PTZController
 
-def moveCameraUp():
-    controller.moveUp()
-
-class ejemp(QObject):
-    def __init__(self):
-        QObject.__init__(self)
-    def saludar(self):
-        print('ola')
 
 
 
 if __name__ == "__main__":
-    app = QGuiApplication(sys.argv)
-    engine = QQmlApplicationEngine()
-    ej = onvif.ejemp()
-    controller = ptz.OnvifPtzController(url='http://192.168.1.10/onvif/ptz_service', username='admin', password='password')
-    engine.rootContext().setContextProperty('onvif_controller', controller)
-    engine.rootContext().setContextProperty('ej', ej)
-    qml_file = Path(__file__).resolve().parent / "qml/main.qml"
-    engine.load("qml/main.qml")
-    if not engine.rootObjects():
-        sys.exit(-1)
-    sys.exit(app.exec())
+    mycam = ONVIFCamera('192.168.88.253', 80, 'admin', 'L2F63400', 'etc/onvif/wsdl/')
+    ptz = PTZController(mycam)
+
+    app = QApplication([])
+    window = QWidget()
+    
+
+    buttonDreta = QPushButton('Girar dreta')
+    buttonEsquerra = QPushButton('Girar esquerra')
+
+    buttonDreta.clicked.connect(ptz.move_right)
+    buttonEsquerra.clicked.connect(ptz.move_left)
+
+    layout = QVBoxLayout()
+    layout.addWidget(buttonEsquerra)
+    layout.addWidget(buttonDreta)
+    window.setLayout(layout)
+
+    window.show()
+    app.exec()

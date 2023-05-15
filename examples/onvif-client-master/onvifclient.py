@@ -14,7 +14,7 @@ import re
 ##############################################
 ### Edit these variables #####################
 ##############################################
-destinationIP = '10.192.255.255' # the camera ip
+destinationIP = '192.168.88.253' # the camera ip
 userName = 'admin' # admin, or user, etc...
 password = 'L2F63400' # the password for camera
 ##############################################

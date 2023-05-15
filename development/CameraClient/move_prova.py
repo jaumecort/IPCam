@@ -1,8 +1,9 @@
 import asyncio, sys
 from onvif import ONVIFCamera
+import time
 
 IP="192.168.88.253"   # Camera IP address
-PORT=10080           # Port
+PORT=80           # Port
 USER="admin"         # Username
 PASS="L2F63400"        # Password
 
@@ -73,7 +74,7 @@ def move_downright(ptz, request):
     do_move(ptz, request)
 
 def setup_move():
-    mycam = ONVIFCamera(IP, PORT, USER, PASS)
+    mycam = ONVIFCamera(IP, PORT, USER, PASS, 'etc/onvif/wsdl/')
     # Create media service object
     media = mycam.create_media_service()
     
@@ -143,14 +144,9 @@ def readin():
             
 if __name__ == '__main__':
     setup_move()
-    loop = asyncio.get_event_loop()
-    try:
-        loop.add_reader(sys.stdin,readin)
-        print("Use Ctrl-C to quit")
-        print("Your command: ", end='',flush=True)
-        loop.run_forever()
-    except:
-        pass
-    finally:
-        loop.remove_reader(sys.stdin)
-        loop.close()
+    while True:
+        move_left(ptz,moverequest)
+        time.sleep(0.5)
+        move_right(ptz, moverequest)
+        time.sleep(0.5)
+    
