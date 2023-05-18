@@ -1,0 +1,21 @@
+Saludos de Imou Direct,
+
+Nos gustaría compartir algunas sugerencias sobre cómo configurar este producto, por favor, compruébelo antes de hacer la configuración wifi, gracias.
+
+1, La cámara Imou sólo puede funcionar con wifi de 2,4ghz, el cifrado wifi debe ser WPA o WPA2;
+
+2, Por favor, escanee el código QR para añadir el dispositivo, asegúrese de que la luz LED del dispositivo está parpadeando en verde lentamente, de lo contrario, por favor, mantenga pulsado el botón RESET durante 10 segundos para restaurar la configuración de fábrica;
+
+3. Introduzca correctamente la contraseña de su wifi, asegúrese de que el teléfono y la cámara están cerca del router wifi, a menos de 30 cm.
+
+Si siempre no se conecta, por favor, póngase en contacto con nosotros a través de la siguiente ruta:
+
+—Whatsapp: +31 06 38227132（mensaje solamente）
+
+—Soporte de Imou life App: chat en línea
+
+—Dirección de correo electrónico: compruebe la dirección de correo electrónico de QSG o el sitio web oficial de Imou
+
+Nota: por favor, adjunte su número de pedido de Amazon y el SN del dispositivo cuando pida ayuda desde la ruta anterior.
+
+Gracias.

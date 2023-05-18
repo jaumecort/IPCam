@@ -20,8 +20,6 @@ def OnvifDiscovery(broadcastIP):
     sock.sendto(udpProbe.encode(), (broadcastIP, udpDiscoveryPort))
 
     # receive back discovery info
-
-
     while True:
         ready = select.select([sock], [], [], discoveryTime)
         if ready[0]:
@@ -37,9 +35,22 @@ def OnvifDiscovery(broadcastIP):
     return [deviceAddrs, deviceUris]
 
 if __name__=="__main__":
-    broadcastIP = '192.168.88.255'
-    d = OnvifDiscovery(broadcastIP)
+    broadcastIP = input('Broadcast IP? \n\t(r=192.168.88.255) \t(l=147.83.49.255) \t(d=147.83.49.78)\n')
+    
+    if broadcastIP=='r':
+        broadcastIP='192.168.88.255'
+    if broadcastIP=='l':
+        broadcastIP='147.83.49.255'
+    if broadcastIP=='d':
+        broadcastIP='147.83.49.78'
+        
+    [ips, uris] = OnvifDiscovery(broadcastIP)
+    
+    for ip in ips:
+        print(ip)
+        
+    for uri in uris:
+        print(uri)
 
-    print(d)
-    print(d[0])
-    print(d[1])
+    
+    input()
