@@ -1,8 +1,9 @@
-import time
+
 import socket
 import uuid
 import re
 import select
+
 
 def OnvifDiscovery(broadcastIP):
     #returns:
