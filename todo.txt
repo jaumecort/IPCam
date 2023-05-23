@@ -3,7 +3,7 @@ Esquema general (organització en directoris y UML)
 Petit README
 Branches?
 Versions?
-Definir 100% UI
+Definir 100% UI y sistema de arxius
 Deixar moduls amb /TODOs
 Es necessari fer makefile?
 Establir com es fara l'executable (Makefile, requirements.txt, etc)

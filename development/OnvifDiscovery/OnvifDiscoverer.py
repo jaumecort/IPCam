@@ -53,5 +53,3 @@ if __name__=="__main__":
     for uri in uris:
         print(uri)
 
-    
-    input()

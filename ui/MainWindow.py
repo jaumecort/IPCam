@@ -7,7 +7,9 @@ from PyQt6.QtGui import *
 
 from ui.main_window.main_window_ui import Ui_MainWindow
 
-from development.OnvifDiscovery.OnvifDiscoverer import OnvifDiscovery
+from development import *
+
+#from development.OnvifDiscovery.OnvifDiscoverer import OnvifDiscovery
 
 class Camera:
     def __init__(self) -> None:
