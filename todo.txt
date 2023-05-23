@@ -1,0 +1,12 @@
+Automatizar Documentació (+ TODO/DONE)
+Esquema general (organització en directoris y UML)
+Petit README
+Branches?
+Versions?
+Definir 100% UI
+Deixar moduls amb /TODOs
+Es necessari fer makefile?
+Establir com es fara l'executable (Makefile, requirements.txt, etc)
+Definir com funcionara PTZ y ¿PTZVector?
+Arxius de configuració? Parametres?
+Gestió de exepcions
