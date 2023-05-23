@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>873</width>
-    <height>760</height>
+    <width>464</width>
+    <height>289</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,68 +16,82 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
-     <widget class="QGroupBox" name="CameraConect">
+     <widget class="QGroupBox" name="groupBox">
       <property name="title">
-       <string>Connect to Camera</string>
+       <string>Camera</string>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QPushButton" name="ConnectButton">
-         <property name="text">
-          <string>Connect</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="statusLabel">
-         <property name="text">
-          <string>disconected</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="name">
-         <property name="text">
-          <string>Unk</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item>
-     <widget class="QGroupBox" name="groupBox_2">
-      <property name="title">
-       <string>Discover</string>
-      </property>
-      <widget class="QPushButton" name="discoverButton">
+      <widget class="QTextBrowser" name="textBrowser">
        <property name="geometry">
         <rect>
-         <x>120</x>
-         <y>40</y>
-         <width>75</width>
-         <height>24</height>
+         <x>180</x>
+         <y>30</y>
+         <width>256</width>
+         <height>192</height>
         </rect>
-       </property>
-       <property name="text">
-        <string>Discover</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="ipedit">
+      <widget class="QWidget" name="verticalLayoutWidget_2">
        <property name="geometry">
         <rect>
-         <x>70</x>
-         <y>110</y>
-         <width>113</width>
-         <height>22</height>
+         <x>10</x>
+         <y>30</y>
+         <width>158</width>
+         <height>71</height>
         </rect>
        </property>
-       <property name="inputMask">
-        <string/>
-       </property>
-       <property name="text">
-        <string>ip</string>
-       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>status: </string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="ipLineEdit">
+            <property name="maximumSize">
+             <size>
+              <width>120</width>
+              <height>21</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>192.168.1.88</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>ip: </string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="statusLabel">
+            <property name="text">
+             <string>disconnected</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QPushButton" name="connectButton">
+          <property name="text">
+           <string>Connect</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
@@ -88,12 +102,11 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>873</width>
+     <width>464</width>
      <height>22</height>
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="actionConnection">
    <property name="text">
     <string>Connect</string>
@@ -108,14 +121,14 @@
  <resources/>
  <connections>
   <connection>
-   <sender>discoverButton</sender>
+   <sender>connectButton</sender>
    <signal>clicked()</signal>
-   <receiver>actionDiscover</receiver>
+   <receiver>actionConnection</receiver>
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>166</x>
-     <y>435</y>
+     <x>97</x>
+     <y>118</y>
     </hint>
     <hint type="destinationlabel">
      <x>-1</x>
