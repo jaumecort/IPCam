@@ -1,3 +1,4 @@
+FastCam
 Automatizar Documentació (+ TODO/DONE)
 Esquema general (organització en directoris y UML)
 Petit README
