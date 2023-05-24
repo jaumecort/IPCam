@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file '.\ui\dev\prova.ui'
+# Form implementation generated from reading ui file '.\development\ui\MainWindow.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.2
 #
@@ -19,11 +19,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.groupBox = QtWidgets.QGroupBox(parent=self.centralwidget)
         self.groupBox.setObjectName("groupBox")
-        self.textBrowser = QtWidgets.QTextBrowser(parent=self.groupBox)
-        self.textBrowser.setGeometry(QtCore.QRect(180, 30, 256, 192))
-        self.textBrowser.setObjectName("textBrowser")
+        self.console = QtWidgets.QTextBrowser(parent=self.groupBox)
+        self.console.setGeometry(QtCore.QRect(180, 30, 256, 192))
+        self.console.setObjectName("console")
         self.verticalLayoutWidget_2 = QtWidgets.QWidget(parent=self.groupBox)
-        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(10, 30, 158, 71))
+        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(10, 30, 158, 107))
         self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
@@ -49,6 +49,9 @@ class Ui_MainWindow(object):
         self.connectButton = QtWidgets.QPushButton(parent=self.verticalLayoutWidget_2)
         self.connectButton.setObjectName("connectButton")
         self.verticalLayout_3.addWidget(self.connectButton)
+        self.discoverButton = QtWidgets.QPushButton(parent=self.verticalLayoutWidget_2)
+        self.discoverButton.setObjectName("discoverButton")
+        self.verticalLayout_3.addWidget(self.discoverButton)
         self.verticalLayout_2.addWidget(self.groupBox)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
@@ -62,6 +65,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.connectButton.clicked.connect(self.actionConnection.trigger) # type: ignore
+        self.discoverButton.clicked.connect(self.actionDiscover.trigger) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -73,5 +77,6 @@ class Ui_MainWindow(object):
         self.label_3.setText(_translate("MainWindow", "ip: "))
         self.statusLabel.setText(_translate("MainWindow", "disconnected"))
         self.connectButton.setText(_translate("MainWindow", "Connect"))
+        self.discoverButton.setText(_translate("MainWindow", "Discover"))
         self.actionConnection.setText(_translate("MainWindow", "Connect"))
         self.actionDiscover.setText(_translate("MainWindow", "Discover"))

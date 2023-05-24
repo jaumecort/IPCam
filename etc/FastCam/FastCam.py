@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     if i.lower() == 's':
         user="admin"
-        password="L22E38E9"
+        password="L2F63400"
         url = r'rtsp://'+user+r':'+password+r'@'+ip+r':'+port+r'/cam/realmonitor?channel=1&&subtype=0&&unicast=true&&proto=Onvif'
           
     else:

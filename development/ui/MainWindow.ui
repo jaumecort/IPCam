@@ -20,7 +20,7 @@
       <property name="title">
        <string>Camera</string>
       </property>
-      <widget class="QTextBrowser" name="textBrowser">
+      <widget class="QTextBrowser" name="console">
        <property name="geometry">
         <rect>
          <x>180</x>
@@ -36,7 +36,7 @@
          <x>10</x>
          <y>30</y>
          <width>158</width>
-         <height>71</height>
+         <height>107</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -91,6 +91,13 @@
           </property>
          </widget>
         </item>
+        <item>
+         <widget class="QPushButton" name="discoverButton">
+          <property name="text">
+           <string>Discover</string>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
      </widget>
@@ -129,6 +136,22 @@
     <hint type="sourcelabel">
      <x>97</x>
      <y>118</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>discoverButton</sender>
+   <signal>clicked()</signal>
+   <receiver>actionDiscover</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>97</x>
+     <y>154</y>
     </hint>
     <hint type="destinationlabel">
      <x>-1</x>
