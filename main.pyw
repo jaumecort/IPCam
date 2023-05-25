@@ -3,7 +3,7 @@ from PyQt6.QtWidgets import *
 from PyQt6.QtCore import *
 from PyQt6.QtGui import *
 
-from ui.MainWindow import MainWindow
+from ui.main_window.MainWindow import MainWindow
 
 if __name__ == "__main__":
     # Inicialitzam Applicació

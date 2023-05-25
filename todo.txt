@@ -1,13 +1,22 @@
-FastCam
+DONE FastCam
+Predefinir tipus a les funcions
 Automatizar Documentació (+ TODO/DONE)
 Esquema general (organització en directoris y UML)
 Petit README
-Branches?
+
 Versions?
 Definir 100% UI y sistema de arxius
-Deixar moduls amb /TODOs
+
 Es necessari fer makefile?
 Establir com es fara l'executable (Makefile, requirements.txt, etc)
+Gestió de exepcions
+
 Definir com funcionara PTZ y ¿PTZVector?
 Arxius de configuració? Parametres?
-Gestió de exepcions
+
+Idees:
+QRubberBand per seleccionar part de l'imatge
+Bloquejar ipLine si s'esta conectat
+Exepcio si ipline is not ipv4
+Passar tot MainWindow enlloc de widgets un a un
+
