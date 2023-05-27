@@ -8,5 +8,5 @@
 - Es possible presentar l'imatge en directe de'una WebCam
 - Els controls per conectar-se i desconectarse mitjançant un client SOAP-Onvif a certa IP estàn preparats
 
-<img src="etc/img/UI-27-05-2023.png"  width="400" height="auto">
+<img src="etc/img/UI-27-05-2023.png"  width="800" height="auto">
 
