@@ -9,6 +9,7 @@
 - Definir 100% UI (Sobretot PTZ i followers)
 - Passar tot MainWindow enlloc de widgets un a un
 - Predefinir tipus a les funcions
+- Popping widget per modificar configuració de la càmara.
 ### Programari
 - ~~etc/FastCam Programa cmd per descobrir ip de la càmera i obrir vlc~~
 - Arxius de configuració? Parametres?
