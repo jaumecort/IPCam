@@ -1,9 +1,16 @@
-DONE FastCam
+#TO-DO List:
+
+
+
+## UI
 Passar tot MainWindow enlloc de widgets un a un
 Predefinir tipus a les funcions
-Automatizar Documentació (+ TODO/DONE)
-Esquema general (organització en directoris y UML)
-Petit README
+
+## Programari
+- ~~etc/FastCam Programa cmd per descobrir ip de la càmera i obrir vlc ~~
+- Automatizar Documentació 
+- Esquema general (organització en directoris y UML)
+- Petit README
 
 Versions?
 Definir 100% UI y sistema de arxius
