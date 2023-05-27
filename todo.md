@@ -1,6 +1,7 @@
-#TO-DO List:
+# TO-DO List:
 
 
+~~Texto tachado~~
 
 ## UI
 Passar tot MainWindow enlloc de widgets un a un
