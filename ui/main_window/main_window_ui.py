@@ -134,7 +134,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "IPCam"))
         self.CameraBox.setTitle(_translate("MainWindow", "Camera"))
         self.discoverButton.setText(_translate("MainWindow", "Discover"))
         self.label_3.setText(_translate("MainWindow", "ip: "))
