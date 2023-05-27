@@ -1,7 +1,7 @@
 # TO-DO List:
 
 
-~~Texto tachado~~
+
 
 ## UI
 Passar tot MainWindow enlloc de widgets un a un
@@ -10,6 +10,7 @@ Predefinir tipus a les funcions
 ## Programari
 - ~~etc/FastCam Programa cmd per descobrir ip de la càmera i obrir vlc ~~
 - Automatizar Documentació 
+- ~~Texto tachado~~
 - Esquema general (organització en directoris y UML)
 - Petit README
 
