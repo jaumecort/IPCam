@@ -1,6 +1,7 @@
 # IPCam
 
 ## Avanços:
+~~Texto tachado~~
 
 ### A dia 27/05/2023:
 - Es té un quadre de diàleg per presentar informació i errors
