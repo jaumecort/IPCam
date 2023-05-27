@@ -4,25 +4,29 @@ from PyQt6.QtWidgets import *
 from PyQt6.QtCore import *
 from PyQt6.QtGui import *
 
+from ui.main_window.workers.VideoFeed import *
+
 class Camera:
-    def __init__(self, vf) -> None:
-        self.vf=vf
+    vf = VideoFeeder()
+    def __init__(self) -> None:
+        
         pass
 
     def disconnect(self):
         print("Implementar desconexió!")
-        self.vf.feeding=False
+
+        self.vf.setFeeding(False)
         return 
 
 
     def connect(self, ip):
         print("Implementar conexió!")
         self.status_connected = True
+        self.vf.setFeeding(True)
         self.vf.start()
         return True
-            
 
-class Connecter:
+class CameraBox:
     status_connected=False
     def __init__(self, ipline, label, cam: Camera, console, button) -> None:
         self.ipLineEdit=ipline
@@ -58,6 +62,11 @@ class Connecter:
         for ip in ips:
             self.console.afegirMissatge("Sha trobat camara amb ip "+ip)
             self.ipline.setText(ip)
+
+
+            
+
+
 
             
     

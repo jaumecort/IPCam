@@ -26,11 +26,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
         #vf.start()
         # Aqui definirem els objectes necessaris:
-        self.vf = VideoFeeder(self)
-        self.cam = Camera(self.vf)
+        
+        self.cam = Camera()
         
         self.consolecontroller=ConsoleController(self.console)
-        self.connecter=Connecter(self.ipLineEdit, self.statusLabel, self.cam, self.consolecontroller, self.connectButton)
+        self.connecter=CameraBox(self.ipLineEdit, self.statusLabel, self.cam, self.consolecontroller, self.connectButton)
         
         #Setup ui i signals
         self.connectSignalsSlots()
@@ -38,9 +38,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         #Aqui connectarem totes les senyals amb funcions propies
     def connectSignalsSlots(self):
+        #Boto discover
         self.actionDiscover.triggered.connect(self.connecter.discover)
+        #Boto connect
         self.actionConnection.triggered.connect(self.connecter.buttonPressed)
-        self.vf.changePixmap.connect(self.setImage)
+        #Senyal per canviar la imatge
+        self.cam.vf.changePixmap.connect(self.setImage)
         self.connecter.discoverer.discoveries.connect(self.connecter.printDiscoveries)
 
     

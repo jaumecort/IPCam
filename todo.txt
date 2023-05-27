@@ -1,4 +1,5 @@
 DONE FastCam
+Passar tot MainWindow enlloc de widgets un a un
 Predefinir tipus a les funcions
 Automatizar Documentació (+ TODO/DONE)
 Esquema general (organització en directoris y UML)
@@ -18,5 +19,5 @@ Idees:
 QRubberBand per seleccionar part de l'imatge
 Bloquejar ipLine si s'esta conectat
 Exepcio si ipline is not ipv4
-Passar tot MainWindow enlloc de widgets un a un
+
 
