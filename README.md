@@ -26,6 +26,13 @@
 ### Modul Discovery
 - Definir retorn de funció (diccionari o llista?)
 
+### Modul Follower
+- Serveix per fer el seguiment de elements. (p.e: leds, pantalles, bombetes, motors...)
+- Un petit esquema de com podria funcionar:
+<p align="center">
+<img src="etc/img/Follower_esquema.png"  width="600" height="auto">
+</p>
+
 
 
 ## Avanços:

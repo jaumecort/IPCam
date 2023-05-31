@@ -64,12 +64,6 @@ class CameraBox:
             self.ipline.setText(ip)
 
 
-            
-
-
-
-            
-    
 
 class Discoverer(QThread):
     discoveries=pyqtSignal(list)

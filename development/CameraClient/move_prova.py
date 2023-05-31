@@ -92,6 +92,7 @@ def setup_move():
 
     global moverequest
     moverequest = ptz.create_type('ContinuousMove')
+    
     moverequest.ProfileToken = media_profile.token
     if moverequest.Velocity is None:
         moverequest.Velocity = ptz.GetStatus({'ProfileToken': media_profile.token}).Position
