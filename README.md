@@ -5,11 +5,16 @@
 - QRubberBand per seleccionar part de l'imatge
 - Bloquejar ipLine si s'esta conectat
 - Exepcio si ipline is not ipv4
+### FastCam
+- Donar la possibilitat de elegir entre les credencials de les dues càmeres del laboratori
 ### UI
 - Definir 100% UI (Sobretot PTZ i followers)
+- Ajustar mida Live Feed
 - Passar tot MainWindow enlloc de widgets un a un
 - Predefinir tipus a les funcions
-- Popping widget per modificar configuració de la càmara.
+- Popping widget per modificar configuració de la càmara
+- Definir creació de followers
+  
 ### Programari
 - ~~etc/FastCam Programa cmd per descobrir ip de la càmera i obrir vlc~~
 - Arxius de configuració? Parametres?
@@ -26,7 +31,7 @@
     ```
 ### Mòdul Discovery
 - Definir retorn de funció (diccionari o llista?)
-
+  
 ### Mòdul Follower
 - Serveix per fer el seguiment de elements. (p.e: leds, pantalles, bombetes, motors...)
 - Un petit esquema de com podria funcionar:
