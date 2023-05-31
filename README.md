@@ -18,16 +18,16 @@
 - Petit README
 - Definir gestió de versions?
 - Establir com es fara l'executable (Makefile, requirements.txt, etc)
-### Modul PTZ
+### Mòdul PTZ
 - Definir com funcionara PTZ y ¿PTZVector?
     ```python
     # Crear objeto PTZVector
     ptz_vector = client.get_type('ns0:PTZVector')  # Reemplaza 'ns0' con el namespace adecuado
     ```
-### Modul Discovery
+### Mòdul Discovery
 - Definir retorn de funció (diccionari o llista?)
 
-### Modul Follower
+### Mòdul Follower
 - Serveix per fer el seguiment de elements. (p.e: leds, pantalles, bombetes, motors...)
 - Un petit esquema de com podria funcionar:
 <p align="center">
