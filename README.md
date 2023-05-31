@@ -46,3 +46,7 @@
 <img src="etc/img/UI-27-05-2023.png"  width="600" height="auto">
 </p>
 
+### A dia 25/05/2023:
+- Es fa un script "FastCam" ubicat a etc/FastCam per trobar una camara a la xarxa, i obrir el reproductor VLC amb el streaming d'aquesta.
+- Es deixa l'script preparat al ordinador de la càmara FAR per realizar els assaigos d'inmunitat.
+
