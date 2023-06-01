@@ -7,11 +7,11 @@ import OnvifDiscoverer
 if __name__ == "__main__":
 
     port="554"
+    bc ="255.255.255.255"
     cmdVLC=r'C:\Program Files\VideoLAN\VLC\vlc'
 
     print("Buscando camaras...")
 
-    bc ="255.255.255.255"
     dev = OnvifDiscoverer.OnvifDiscovery(bc)
 
     if not dev:
@@ -24,13 +24,19 @@ if __name__ == "__main__":
             ip = dev[uri]
             print("Camara encontrada en IP:" + ip)
 
-    i = input("Credenciales por defecto? (s/n) ")
+    msg = "Credenciales? \n\t1) Camara X \n\t2) Camara Y \n\t3) Otra\n"
+    
+    i = '0'
+    while not (i=='1' or i=='2' or i=='3'):
+        i = input(msg)
 
-    while not (i.lower()=='s' or i.lower()=='n'):
-        print(i)
-        i = input("Credenciales por defecto? (s/n)")
 
-    if i.lower() == 's':
+    if i == '1': #Camara X
+        user="admin"
+        password="L2F63400"
+        url = r'rtsp://'+user+r':'+password+r'@'+ip+r':'+port+r'/cam/realmonitor?channel=1&&subtype=0&&unicast=true&&proto=Onvif'
+    
+    if i == '2': #Camara Y
         user="admin"
         password="L2F63400"
         url = r'rtsp://'+user+r':'+password+r'@'+ip+r':'+port+r'/cam/realmonitor?channel=1&&subtype=0&&unicast=true&&proto=Onvif'
