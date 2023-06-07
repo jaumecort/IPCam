@@ -5,13 +5,16 @@
 - QRubberBand per seleccionar part de l'imatge
 - Bloquejar ipLine si s'esta conectat
 - Exepcio si ipline is not ipv4
+  
 ### FastCam
-- Donar la possibilitat de elegir entre les credencials de les dues càmeres del laboratori
+
+- Adjustar la contrasenya de la camera Y
+  
 ### UI
 - Definir 100% UI (Sobretot PTZ i followers)
 - Ajustar mida Live Feed
-- Passar tot MainWindow enlloc de widgets un a un
-- Predefinir tipus a les funcions
+- ~~Passar tot MainWindow enlloc de widgets un a un~~
+- ~~Predefinir tipus a les funcions~~
 - Popping widget per modificar configuració de la càmara
 - Definir creació de followers
   
@@ -31,7 +34,13 @@
     ptz_vector = client.get_type('ns0:PTZVector')  # Reemplaza 'ns0' con el namespace adecuado
     ```
 ### Mòdul Discovery
-- Definir retorn de funció (diccionari o llista?)
+- ~~Definir retorn de funció (diccionari o llista?)~~
+
+### Mòdul CameraClient
+- Gestió de contrasenyes i ususaris
+
+### Mòdul FeedBox
+- Gestió de url amb autentificació inclosa
   
 ### Mòdul Follower
 - Serveix per fer el seguiment de elements. (p.e: leds, pantalles, bombetes, motors...)
@@ -43,6 +52,10 @@
 
 
 ## Avanços:
+
+### A dia 07/06/2023:
+- 
+
 ### A dia 27/05/2023:
 - Es té un quadre de diàleg per presentar informació i errors
 - Es descobreixen les cameres accesibles mitjançant un broadcast UDP, en cas de descobriment, es canvia la ip automàtiament.

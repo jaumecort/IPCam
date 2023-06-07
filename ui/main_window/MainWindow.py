@@ -8,17 +8,16 @@ from PyQt6.QtGui import *
 from ui.main_window.main_window_ui import Ui_MainWindow
 
 
-from ui.main_window.workers.VideoFeed import *
+from ui.main_window.workers.FeedBox import *
 from ui.main_window.workers.CameraBox import *
-from ui.main_window.workers.Console import *
+from ui.main_window.workers.ConsoleBox import *
+
+from ui.main_window.widgets.Follower import Follower
 
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
 
-    @pyqtSlot(QImage)
-    def setImage(self, image):
-        self.labelVideo.setPixmap(QPixmap.fromImage(image))
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -26,25 +25,36 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
         #vf.start()
         # Aqui definirem els objectes necessaris:
+        self.feedBox=FeedBox(self)
+        self.consoleBox=ConsoleBox(self.console)
+        self.cameraBox=CameraBox(self)
         
-        self.cam = Camera()
-        
-        self.consolecontroller=ConsoleController(self.console)
-        self.connecter=CameraBox(self.ipLineEdit, self.statusLabel, self.cam, self.consolecontroller, self.connectButton)
         
         #Setup ui i signals
         self.connectSignalsSlots()
-        
+    
 
+        #Prova followers
+        self.f = []
+        for i in range(3):
+            self.f.append(Follower(parent=self.FollowersScrollAreaWidgetContents))
+
+        for fol in self.f:
+            fol.setup("follower2")
+            self.FollowersLayout.addWidget(fol)
+
+
+
+    
         #Aqui connectarem totes les senyals amb funcions propies
     def connectSignalsSlots(self):
         #Boto discover
-        self.actionDiscover.triggered.connect(self.connecter.discover)
+        
         #Boto connect
-        self.actionConnection.triggered.connect(self.connecter.buttonPressed)
+        self.actionConnection.triggered.connect(self.cameraBox.connect)
         #Senyal per canviar la imatge
-        self.cam.vf.changePixmap.connect(self.setImage)
-        self.connecter.discoverer.discoveries.connect(self.connecter.printDiscoveries)
+    
+        
 
     
     

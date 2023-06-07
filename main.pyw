@@ -11,6 +11,6 @@ if __name__ == "__main__":
 
     # Inicialitzam Controlador IU
     win = MainWindow()
-    win.show()
+    win.show()  
 
     sys.exit(app.exec())

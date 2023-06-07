@@ -1,4 +1,4 @@
-class ConsoleController:
+class ConsoleBox:
     def __init__(self, console) -> None:
         self.console = console
         pass

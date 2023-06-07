@@ -7,8 +7,9 @@ import select
 
 def OnvifDiscovery(broadcastIP):
     #returns:
-    deviceAddrs = []
-    deviceUris = []
+    devices = {}
+    #deviceAddrs = []
+    #deviceUris = []
 
     #constants:
     udpDiscoveryPort = 3702 # IANA port number for web Service Discovery
@@ -27,14 +28,15 @@ def OnvifDiscovery(broadcastIP):
         if ready[0]:
             data, addr = sock.recvfrom(65536) 
             if data: 
-                deviceAddrs.append(addr[0])
+                #deviceAddrs.append(addr[0])
                 data = str(data)
                 m = re.search(r'XAddrs\s*>(.*?)<', data)
                 deviceUri = m.group(1).strip()
-                deviceUris.append(deviceUri)
+                #deviceUris.append(deviceUri)
+                devices[addr[0]]=deviceUri
         else: break
 
-    return [deviceAddrs, deviceUris]
+    return devices
 
 if __name__=="__main__":
     broadcastIP = input('Broadcast IP? \n\t(r=192.168.88.255) \t(l=147.83.49.255) \t(d=147.83.49.78)\n')
