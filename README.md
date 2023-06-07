@@ -4,10 +4,9 @@
 ### Idees:
 - QRubberBand per seleccionar part de l'imatge
 - Bloquejar ipLine si s'esta conectat
-- Exepcio si ipline is not ipv4
+- ~~Exepcio si ipline no es correcte~~
   
 ### FastCam
-
 - Adjustar la contrasenya de la camera Y
   
 ### UI
@@ -22,9 +21,9 @@
 - ~~etc/FastCam Programa cmd per descobrir ip de la càmera i obrir vlc~~
 - Arxius de configuració? Parametres?
 - Automatizar Documentació 
-- Esquema general (organització en directoris y UML)
+- Esquema general (~~organització en directoris~~ y UML)
 - https://github.com/seanfisk/python-project-template
-- Petit README
+- ~~Petit README~~
 - Definir gestió de versions?
 - Establir com es fara l'executable (Makefile, requirements.txt, etc)
 ### Mòdul PTZ
@@ -33,14 +32,16 @@
     # Crear objeto PTZVector
     ptz_vector = client.get_type('ns0:PTZVector')  # Reemplaza 'ns0' con el namespace adecuado
     ```
-### Mòdul Discovery
+### Mòdul CameraBox
 - ~~Definir retorn de funció (diccionari o llista?)~~
+- ~~Thread per la conexió~~
 
 ### Mòdul CameraClient
-- Gestió de contrasenyes i ususaris
+- Gestió de contrasenyes i usuaris
+- ~~Moure WSDLs a src~~
 
 ### Mòdul FeedBox
-- Gestió de url amb autentificació inclosa
+- ~~Gestió de url amb autentificació inclosa~~
   
 ### Mòdul Follower
 - Serveix per fer el seguiment de elements. (p.e: leds, pantalles, bombetes, motors...)
@@ -54,7 +55,13 @@
 ## Avanços:
 
 ### A dia 07/06/2023:
-- 
+- Es pot rebre el streaming d'una càmera trobada a la xarxa
+- Si s'intenta conectar a una IP no vàlida, es mostra un error a la consola
+- Quan una camera està conectada, no es deixa ni canviar la IP ni descobrir-ne de noves
+- Actuialització de la UI, es presenta com podrien estar mostrats els "Followers"
+<p align="center">
+<img src="etc/img/UI-07-06-2023.png"  width="600" height="auto">
+</p>
 
 ### A dia 27/05/2023:
 - Es té un quadre de diàleg per presentar informació i errors

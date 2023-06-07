@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>888</width>
-    <height>707</height>
+    <width>948</width>
+    <height>542</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -18,14 +18,14 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>682</width>
-    <height>200</height>
+    <width>948</width>
+    <height>0</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1600000</width>
-    <height>16777215</height>
+    <width>948</width>
+    <height>542</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -44,6 +44,9 @@
     </property>
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_3">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetMinimumSize</enum>
+      </property>
       <property name="topMargin">
        <number>0</number>
       </property>
@@ -66,13 +69,13 @@
           <property name="minimumSize">
            <size>
             <width>180</width>
-            <height>120</height>
+            <height>114</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
             <width>180</width>
-            <height>100</height>
+            <height>114</height>
            </size>
           </property>
           <property name="title">
@@ -112,10 +115,22 @@
            </item>
            <item>
             <layout class="QGridLayout" name="gridLayout">
+             <property name="horizontalSpacing">
+              <number>1</number>
+             </property>
+             <property name="verticalSpacing">
+              <number>0</number>
+             </property>
              <item row="0" column="1">
               <widget class="QLabel" name="statusLabel">
+               <property name="font">
+                <font>
+                 <bold>true</bold>
+                 <kerning>true</kerning>
+                </font>
+               </property>
                <property name="text">
-                <string>disconnected</string>
+                <string>Disconnected</string>
                </property>
               </widget>
              </item>
@@ -175,13 +190,13 @@
           <property name="minimumSize">
            <size>
             <width>474</width>
-            <height>120</height>
+            <height>114</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
             <width>474</width>
-            <height>100</height>
+            <height>114</height>
            </size>
           </property>
           <property name="title">
@@ -201,8 +216,8 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>662</width>
-          <height>508</height>
+          <width>640</width>
+          <height>360</height>
          </size>
         </property>
         <property name="title">
@@ -219,16 +234,16 @@
           <enum>QLayout::SetFixedSize</enum>
          </property>
          <property name="leftMargin">
-          <number>10</number>
+          <number>0</number>
          </property>
          <property name="topMargin">
-          <number>5</number>
+          <number>0</number>
          </property>
          <property name="rightMargin">
-          <number>10</number>
+          <number>0</number>
          </property>
          <property name="bottomMargin">
-          <number>5</number>
+          <number>0</number>
          </property>
          <item>
           <widget class="QLabel" name="labelVideo">
@@ -241,13 +256,13 @@
            <property name="minimumSize">
             <size>
              <width>640</width>
-             <height>480</height>
+             <height>360</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
              <width>640</width>
-             <height>480</height>
+             <height>360</height>
             </size>
            </property>
            <property name="text">
@@ -360,8 +375,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>194</width>
-              <height>479</height>
+              <width>254</width>
+              <height>314</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="FollowersLayout"/>
@@ -380,7 +395,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>888</width>
+     <width>948</width>
      <height>22</height>
     </rect>
    </property>

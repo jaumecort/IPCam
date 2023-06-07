@@ -31,7 +31,7 @@ class VideoFeeder(QThread):
                 h, w, ch = rgbImage.shape
                 bytesPerLine = ch * w
                 convertToQtFormat = QImage(rgbImage.data, w, h, bytesPerLine, QImage.Format.Format_RGB888)
-                p = convertToQtFormat.scaled(640, 480, Qt.AspectRatioMode.KeepAspectRatio)
+                p = convertToQtFormat.scaled(640, 360, Qt.AspectRatioMode.KeepAspectRatio)
                 self.changePixmap.emit(p)
 
 class FeedBox():

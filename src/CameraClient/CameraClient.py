@@ -3,8 +3,9 @@ import string
 
 class CameraClient:
     def __init__(self, ip) -> None:
-        self.mycam = ONVIFCamera(ip, 80, 'admin', 'L2F63400', 'etc/onvif/wsdl/')
-
+        self.mycam = ONVIFCamera(ip, 80, 'admin', 'L2F63400', 'src/onvif/wsdl/')
+        self.username='admin'
+        self.password='L2F63400'
         # Get Hostname
         resp = self.mycam.devicemgmt.GetHostname()
         print("My camera`s hostname: " + str(resp.Name))
@@ -25,8 +26,9 @@ class CameraClient:
             'ProfileToken': self.profiles[0].token
         }
         response = self.media_service.GetStreamUri(request)
-        print(response)
-        return response.Uri
+        uri = response.Uri.split("//")
+        urilogin = f'{uri[0]}//{self.username}:{self.password}@{uri[1]}'
+        return urilogin
 
     def canviarHora(self):
         time_params = self.mycam.devicemgmt.create_type('SetSystemDateAndTime')
@@ -49,5 +51,6 @@ class CameraClient:
 
 if __name__=="__main__":
     cam = CameraClient("192.168.1.107")
+    cam.getStreamUri()
 
  

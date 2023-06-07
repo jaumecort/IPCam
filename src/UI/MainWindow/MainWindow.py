@@ -5,14 +5,11 @@ from PyQt6.uic import loadUi
 from PyQt6.QtCore import *
 from PyQt6.QtGui import *
 
-from ui.main_window.main_window_ui import Ui_MainWindow
+from UI.MainWindow.workers import *
 
+from UI.MainWindow.main_window_ui import *
 
-from ui.main_window.workers.FeedBox import *
-from ui.main_window.workers.CameraBox import *
-from ui.main_window.workers.ConsoleBox import *
-
-from ui.main_window.widgets.Follower import Follower
+from UI.MainWindow.widgets import *
 
 
 
