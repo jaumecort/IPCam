@@ -1,10 +1,12 @@
 # IPCam
-
-## TO-DO List:
-### Idees:
+## Idees:
 - QRubberBand per seleccionar part de l'imatge
 - Bloquejar ipLine si s'esta conectat
 - ~~Exepcio si ipline no es correcte~~
+## TO-DO List:
+
+### Alta prioritat:
+- Procediment per conectar i emprar les càmeres amb FastCam.
   
 ### FastCam
 - Adjustar la contrasenya de la camera Y
@@ -12,20 +14,17 @@
 ### UI
 - Definir 100% UI (Sobretot PTZ i followers)
 - Ajustar mida Live Feed
-- ~~Passar tot MainWindow enlloc de widgets un a un~~
-- ~~Predefinir tipus a les funcions~~
 - Popping widget per modificar configuració de la càmara
+- Popping widget per fer log-in a la camera.
 - Definir creació de followers
   
 ### Programari
 - ~~etc/FastCam Programa cmd per descobrir ip de la càmera i obrir vlc~~
 - Arxius de configuració? Parametres?
 - Automatizar Documentació 
-- Esquema general (~~organització en directoris~~ y UML)
-- https://github.com/seanfisk/python-project-template
-- ~~Petit README~~
-- Definir gestió de versions?
+- Esquema general (UML)
 - Establir com es fara l'executable (Makefile, requirements.txt, etc)
+
 ### Mòdul PTZ
 - Definir com funcionara PTZ y ¿PTZVector?
     ```python
@@ -49,8 +48,6 @@
 <p align="center">
 <img src="etc/img/Follower_esquema.png"  width="600" height="auto">
 </p>
-
-
 
 ## Avanços:
 
