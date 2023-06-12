@@ -1,7 +1,7 @@
 # IPCam
 ## Idees:
 - QRubberBand per seleccionar part de l'imatge
-- Bloquejar ipLine si s'esta conectat
+- ~~Bloquejar ipLine si s'esta conectat~~
 - ~~Exepcio si ipline no es correcte~~
 ## TO-DO List:
 
