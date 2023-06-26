@@ -110,7 +110,7 @@ class PTZController:
                 
 if __name__ == '__main__':
     mycam = ONVIFCamera('192.168.88.253', 80, 'admin', 'L2F63400', 'etc/onvif/wsdl/')
-    ptz = ptzController(mycam)
+    ptz = PTZController(mycam)
     while True:
         ptz.move_left()
         time.sleep(0.5)
