@@ -8,6 +8,7 @@ from PyQt6.QtGui import *
 
 
 from UI.MainWindow.workers.FeedBox import *
+from UI.MainWindow.workers.PTZBox import *
 from UI.MainWindow.workers.ConsoleBox import *
 import UI.MainWindow.MainWindow as mw
 
@@ -24,6 +25,7 @@ class CameraBox:
         self.button=mainwindow.connectButton
         self.feedBox:FeedBox=mainwindow.feedBox
         self.discoverButton=mainwindow.discoverButton
+        self.ptzBox:PTZBox=mainwindow.ptzBox
         
 
         ##Init dels objectes necessaris
@@ -60,6 +62,7 @@ class CameraBox:
         self.button.setText("Disconnect")
         self.button.setEnabled(True)
         self.feedBox.startFeed(self.cameraClient.getStreamUri())
+        self.ptzBox.connectPTZ(self.cameraClient.mycam)
         
         
            

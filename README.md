@@ -6,7 +6,7 @@
 ## TO-DO List:
 
 ### Alta prioritat:
-- Procediment per conectar i emprar les càmeres amb FastCam.
+- ~~Procediment per conectar i emprar les càmeres amb FastCam.~~
   
 ### FastCam
 - Adjustar la contrasenya de la camera Y
@@ -26,11 +26,8 @@
 - Establir com es fara l'executable (Makefile, requirements.txt, etc)
 
 ### Mòdul PTZ
-- Definir com funcionara PTZ y ¿PTZVector?
-    ```python
-    # Crear objeto PTZVector
-    ptz_vector = client.get_type('ns0:PTZVector')  # Reemplaza 'ns0' con el namespace adecuado
-    ```
+- ~~Definir com funcionara PTZ y ¿PTZVector?~~
+
 ### Mòdul CameraBox
 - ~~Definir retorn de funció (diccionari o llista?)~~
 - ~~Thread per la conexió~~
@@ -50,6 +47,10 @@
 </p>
 
 ## Avanços:
+
+### A dia 26/06/2023:
+- PTZ funcionant
+- Actuialitzacio UI (PTZ i Zoom)
 
 ### A dia 07/06/2023:
 - Es pot rebre el streaming d'una càmera trobada a la xarxa

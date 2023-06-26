@@ -6,6 +6,7 @@ from PyQt6.QtCore import *
 from PyQt6.QtGui import *
 
 from UI.MainWindow.workers import *
+from UI.MainWindow.workers.PTZBox import *
 
 from UI.MainWindow.main_window_ui import *
 
@@ -22,9 +23,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
         #vf.start()
         # Aqui definirem els objectes necessaris:
-        self.feedBox=FeedBox(self)
+        self.cameraBox=None
         self.consoleBox=ConsoleBox(self.console)
+        self.ptzBox=PTZBox(self)
+        self.feedBox=FeedBox(self)
+       
         self.cameraBox=CameraBox(self)
+        
+
         
         
         #Setup ui i signals
