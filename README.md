@@ -66,6 +66,9 @@
 ### A dia 26/06/2023:
 - Moviment de la càmara funcionant
 - Actuialitzacio UI (PTZ i Zoom)
+<p align="center">
+<img src="etc/img/UI-27-06-2023.png"  width="600" height="auto">
+</p>
 
 ### A dia 07/06/2023:
 - Es pot rebre el streaming d'una càmera trobada a la xarxa
