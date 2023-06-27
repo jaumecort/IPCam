@@ -1,8 +1,13 @@
 import asyncio, sys
 from onvif import ONVIFCamera
-import time
 
-class PTZController:
+
+from PyQt6.QtWidgets import *
+from PyQt6.QtCore import *
+from PyQt6.QtGui import *
+
+
+class PTZController(QThread):
 
     mycam = None
 
@@ -34,6 +39,7 @@ class PTZController:
         self.moverequest.ProfileToken = media_profile.token
         if self.moverequest.Velocity is None:
             self.moverequest.Velocity = self.ptz.GetStatus({'ProfileToken': media_profile.token}).Position
+    
 
         # Get range of pan and tilt
         # NOTE: X and Y are velocity vector
@@ -42,12 +48,20 @@ class PTZController:
         self.YMAX = ptz_configuration_options.Spaces.ContinuousPanTiltVelocitySpace[0].YRange.Max
         self.YMIN = ptz_configuration_options.Spaces.ContinuousPanTiltVelocitySpace[0].YRange.Min
 
+
     def do_move(self, request):
         # Start continuous move
         if self.active:
             self.ptz.Stop({'ProfileToken': request.ProfileToken})
         self.active = True
         self.ptz.ContinuousMove(request)
+
+    def stop(self):
+        print ('stop')
+        request = self.moverequest
+        request.Velocity.PanTilt.x = 0
+        request.Velocity.PanTilt.y = 0
+        self.do_move(request)
 
     def move_up(self):
         print ('move up...')
@@ -109,11 +123,8 @@ class PTZController:
         
                 
 if __name__ == '__main__':
-    mycam = ONVIFCamera('192.168.88.253', 80, 'admin', 'L2F63400', 'etc/onvif/wsdl/')
-    ptz = ptzController(mycam)
-    while True:
-        ptz.move_left()
-        time.sleep(0.5)
-        ptz.move_right()
-        time.sleep(0.5)
+    mycam = ONVIFCamera('192.168.1.107', 80, 'admin', 'L2F63400', 'src/onvif/wsdl/')
+    ptz = PTZController(mycam)
+
+    ptz.zoom_in()
         

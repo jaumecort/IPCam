@@ -8,6 +8,8 @@ if __name__ == "__main__":
 
     port="554"
     bc ="255.255.255.255"
+    #bc ="192.168.1.255"
+    
     cmdVLC=r'C:\Program Files\VideoLAN\VLC\vlc'
 
     print("Buscando camaras...")
@@ -16,7 +18,7 @@ if __name__ == "__main__":
 
     if not dev:
         print("No se han encontrado camaras")
-        input("Presiona qualquier tecla para salir")
+        input("Presiona enter para salir")
         sys.exit()
 
     for uri in dev: 
@@ -38,10 +40,10 @@ if __name__ == "__main__":
     
     if i == '2': #Camara Y
         user="admin"
-        password="L2F63400"
+        password="L22E38E9"
         url = r'rtsp://'+user+r':'+password+r'@'+ip+r':'+port+r'/cam/realmonitor?channel=1&&subtype=0&&unicast=true&&proto=Onvif'
           
-    else:
+    if i == '3':
         url = r'rtsp://'+ip+':'+port+r'/cam/realmonitor?channel=1&&subtype=0&&unicast=true&&proto=Onvif'
 
     

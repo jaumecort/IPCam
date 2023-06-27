@@ -37,9 +37,12 @@ class VideoFeeder(QThread):
     changePixmap = pyqtSignal(QImage)
     feeding = False
     uri = 0
+    label = None
 
-    def setFeeding(self, b, uri=None):
+
+    def setFeeding(self, b, label, uri=None):
         self.feeding = b
+        self.label = label
         if uri is not None:
             self.uri = uri
             
@@ -57,5 +60,33 @@ class VideoFeeder(QThread):
                 bytesPerLine = ch * w
                 convertToQtFormat = QImage(rgbImage.data, w, h, bytesPerLine, QImage.Format.Format_RGB888)
                 p = convertToQtFormat.scaled(640, 360, Qt.AspectRatioMode.KeepAspectRatio)
-                self.changePixmap.emit(p)
+                self.label.setPixmap(QPixmap.fromImage(p))
+                #self.changePixmap.emit(p)
+
+class FeedBox():
+    vf = VideoFeeder()
+
+    def setImage(self, image):
+        self.labelVideo.setPixmap(QPixmap.fromImage(image))
+
+    def __init__(self, mainwindow) -> None:
+        # Init accesos a mainwindow
+        self.labelVideo = mainwindow.labelVideo
+        self.ipline = mainwindow.ipLineEdit
+
+        # Init signals
+        self.vf.changePixmap.connect(self.setImage)
+
+        # Init Objectes
+        self.vf.setFeeding(False, self.labelVideo)
+
+        pass
+
+    def startFeed(self, uri):
+        self.vf.setFeeding(True, self.labelVideo, uri)
+        self.vf.start()
+
+    def stopFeed(self):
+        self.vf.setFeeding(False, self.labelVideo)
+
     
