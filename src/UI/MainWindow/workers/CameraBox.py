@@ -1,4 +1,3 @@
-import typing
 from PyQt6.QtCore import QObject
 from OnvifDiscovery.OnvifDiscoverer import OnvifDiscovery
 
@@ -9,7 +8,6 @@ from PyQt6.QtGui import *
 
 from UI.MainWindow.workers.FeedBox import *
 from UI.MainWindow.workers.ConsoleBox import *
-import UI.MainWindow.MainWindow as mw
 
 from CameraClient.CameraClient import CameraClient
 

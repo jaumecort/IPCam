@@ -6,18 +6,43 @@ from PyQt6.QtGui import *
 
 #from ui.main_window.MainWindow import MainWindow as mw
 
+class FeedBox():
+    def setImage(self, image):
+        self.labelVideo.setPixmap(QPixmap.fromImage(image))
+
+    def __init__(self, mainwindow) -> None:
+        # Init accesos a mainwindow
+        self.labelVideo = mainwindow.labelVideo
+        self.ipline = mainwindow.ipLineEdit
+
+        # Init Objectes
+        self.vf = VideoFeeder()
+        self.vf.setFeeding(False)
+
+        # Init signals
+        self.vf.changePixmap.connect(self.setImage)
+
+        pass
+
+    def startFeed(self, uri):
+        self.vf.setFeeding(True, uri)
+        self.vf.start()
+
+    def stopFeed(self):
+        self.vf.setFeeding(False)
+
+
+
 class VideoFeeder(QThread):
     changePixmap = pyqtSignal(QImage)
     feeding = False
     uri = 0
-
 
     def setFeeding(self, b, uri=None):
         self.feeding = b
         if uri is not None:
             self.uri = uri
             
-
     def run(self):
         print("rebent feed de: "+ self.uri)
         if self.uri=='0': self.uri=0
@@ -33,31 +58,4 @@ class VideoFeeder(QThread):
                 convertToQtFormat = QImage(rgbImage.data, w, h, bytesPerLine, QImage.Format.Format_RGB888)
                 p = convertToQtFormat.scaled(640, 360, Qt.AspectRatioMode.KeepAspectRatio)
                 self.changePixmap.emit(p)
-
-class FeedBox():
-    vf = VideoFeeder()
-
-    def setImage(self, image):
-        self.labelVideo.setPixmap(QPixmap.fromImage(image))
-
-    def __init__(self, mainwindow) -> None:
-        # Init accesos a mainwindow
-        self.labelVideo = mainwindow.labelVideo
-        self.ipline = mainwindow.ipLineEdit
-
-        # Init signals
-        self.vf.changePixmap.connect(self.setImage)
-
-        # Init Objectes
-        self.vf.setFeeding(False)
-
-        pass
-
-    def startFeed(self, uri):
-        self.vf.setFeeding(True, uri)
-        self.vf.start()
-
-    def stopFeed(self):
-        self.vf.setFeeding(False)
-
     

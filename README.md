@@ -22,7 +22,7 @@
 - Arxius de configuració? Parametres?
 - Automatizar Documentació 
 - Esquema general (~~organització en directoris~~ y UML)
-- https://github.com/seanfisk/python-project-template
+- ~~https://github.com/seanfisk/python-project-template~~
 - ~~Petit README~~
 - Definir gestió de versions?
 - Establir com es fara l'executable (Makefile, requirements.txt, etc)
