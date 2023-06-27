@@ -1,11 +1,16 @@
 from onvif import ONVIFCamera
 import string
+from UI.SimpleLogin.SimpleLogin import *
 
 class CameraClient:
-    def __init__(self, ip) -> None:
-        self.mycam = ONVIFCamera(ip, 80, 'admin', 'L2F63400', 'src/onvif/wsdl/')
-        self.username='admin'
-        self.password='L2F63400'
+    def __init__(self, ip, cred) -> None:
+        self.username=cred[0]
+        self.password=cred[1]
+        print("Trying to connect with usr:"+self.username+" and pssw: "+self.password)
+        try:
+            self.mycam = ONVIFCamera(ip, 80, self.username, self.password, 'onvif/wsdl/')
+        except Exception as ex:
+            print(ex)
         # Get Hostname
         resp = self.mycam.devicemgmt.GetHostname()
         print("My camera`s hostname: " + str(resp.Name))

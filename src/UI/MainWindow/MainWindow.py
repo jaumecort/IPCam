@@ -38,13 +38,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     
 
         #Prova followers
-        self.f = []
-        for i in range(3):
-            self.f.append(Follower(parent=self.FollowersScrollAreaWidgetContents))
+        # self.f = []
+        # for i in range(3):
+        #     self.f.append(Follower(parent=self.FollowersScrollAreaWidgetContents))
 
-        for fol in self.f:
-            fol.setup("follower2")
-            self.FollowersLayout.addWidget(fol)
+        # for fol in self.f:
+        #     fol.setup("follower2")
+        #     self.FollowersLayout.addWidget(fol)
 
 
 

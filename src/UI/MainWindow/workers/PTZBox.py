@@ -19,6 +19,7 @@ class PTZBox:
         self.buttonZIn:QPushButton = mainwindow.PTZIn
         self.buttonZout:QPushButton = mainwindow.PTZout
         self.console=mainwindow.consoleBox
+        self.ptzbox=mainwindow.PTZBox
         
         ## Init de les senyals necessaries
         mainwindow.actionPTZup.triggered.connect(self.moveup)
@@ -36,6 +37,7 @@ class PTZBox:
         try:
             self.ptzSender = PTZController(cam)
             self.console.afegirMissatge("PTZ conected")
+            self.ptzbox.setEnabled(True)
         except: 
             self.ptzSender = None
             self.console.afegirMissatge("PTZ not conected!")
@@ -64,20 +66,4 @@ class PTZBox:
             self.console.afegirMissatge("PTZ not conected!")
 
 
-
-
-
-class PTZsender(QThread):
-    discoveries=pyqtSignal(dict)
-
-    def __init__(self, console, ipline) -> None:
-        super().__init__()
-        self.console = console
-        self.ipline = ipline
-        pass
-
-    # Quan s'apreta el botó de Discover
-    def run(self):
-        devs= OnvifDiscovery("255.255.255.255")
-        self.discoveries.emit(devs)
 

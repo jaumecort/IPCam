@@ -18,13 +18,15 @@ class CameraBox:
     def __init__(self, mainwindow) -> None:
         ## Init de tots als accessos a MainWindow
         self.ipLineEdit:QLineEdit=mainwindow.ipLineEdit
-        self.statusLabel=mainwindow.statusLabel
+        self.statusLabel:QLabel=mainwindow.statusLabel
         self.console:ConsoleBox=mainwindow.consoleBox
         self.button=mainwindow.connectButton
         self.feedBox:FeedBox=mainwindow.feedBox
         self.discoverButton=mainwindow.discoverButton
         self.ptzBox:PTZBox=mainwindow.ptzBox
         
+        self.statusLabel.setText("Disconnected")
+        self.statusLabel.setStyleSheet('color: red')
 
         ##Init dels objectes necessaris
         self.discoverer=Discoverer(self.console, self.ipLineEdit)
@@ -42,6 +44,7 @@ class CameraBox:
         if self.status_connected:
             self.cameraClient = None
             self.statusLabel.setText("Disconnected")
+            self.statusLabel.setStyleSheet('color: red')
             self.button.setText("Connect")
             self.status_connected=False
             self.ipLineEdit.setEnabled(True)
@@ -50,12 +53,15 @@ class CameraBox:
             
         else:
            self.discoverButton.setEnabled(False)
+           cred = SimpleLogin.logindata()
+           self.connecter.setCredentials(cred)
            self.connecter.start()
             
     def setConnection(self, client:CameraClient):
         self.cameraClient = client     
         self.status_connected=True  
         self.statusLabel.setText("Connected")
+        self.statusLabel.setStyleSheet('color: green')
         self.console.afegirMissatge("Connection stablished ["+self.ipLineEdit.text()+"]")
         self.button.setText("Disconnect")
         self.button.setEnabled(True)
@@ -101,8 +107,13 @@ class Discoverer(QThread):
         devs= OnvifDiscovery("255.255.255.255")
         self.discoveries.emit(devs)
 
+from UI.SimpleLogin.SimpleLogin import *
 class Connecter(QThread):
     connection=pyqtSignal(CameraClient)
+    cred = {}
+
+    def setCredentials(self, creds):
+        self.cred = creds
 
     def __init__(self, statusLabel, button, ipLineEdit, console, dbut) -> None:
         super().__init__()
@@ -115,9 +126,10 @@ class Connecter(QThread):
 
     def run(self):
         try:
+            print(self.cred)
             self.ipLineEdit.setEnabled(False)
             self.button.setEnabled(False)
-            self.cameraClient = CameraClient(self.ipLineEdit.text())
+            self.cameraClient = CameraClient(self.ipLineEdit.text(), self.cred)
             self.connection.emit(self.cameraClient)
         except:
             self.console.afegirMissatge("Connection Failed! ["+self.ipLineEdit.text()+"]")

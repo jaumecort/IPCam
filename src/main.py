@@ -5,7 +5,7 @@ from PyQt6.QtGui import *
 
 from UI.MainWindow import MainWindow
 
-
+from UI.SimpleLogin.SimpleLogin import *
 
 if __name__ == "__main__":
     # Inicialitzam Applicació

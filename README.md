@@ -1,43 +1,58 @@
 # IPCam
+
+## Idees Marc:
+- 
+
 ## Idees:
 - QRubberBand per seleccionar part de l'imatge
 - ~~Bloquejar ipLine si s'esta conectat~~
 - ~~Exepcio si ipline no es correcte~~
+  
 ## TO-DO List:
 
 ### Alta prioritat:
 - ~~Procediment per conectar i emprar les càmeres amb FastCam.~~
+- Definir signals conex/desconex de caràcter general
   
 ### FastCam
-- Adjustar la contrasenya de la camera Y
+- ~~Adjustar la contrasenya de la camera Y~~
   
 ### UI
-- Definir 100% UI (Sobretot PTZ i followers)
-- Ajustar mida Live Feed
+- ~~Definir UI PTZ~~
+- Definir UI followers
+- ~~Mida Live Feed dinàmica~~
 - Popping widget per modificar configuració de la càmara
-- Popping widget per fer log-in a la camera.
-- Definir creació de followers
+- ~~Popping widget per fer log-in a la camera.~~
+- Definir creació de followers (a Mainwindow.py hi ha un exemple)
   
 ### Programari
 - ~~etc/FastCam Programa cmd per descobrir ip de la càmera i obrir vlc~~
 - Arxius de configuració? Parametres?
-- Automatizar Documentació 
 - Esquema general (UML)
-- Establir com es fara l'executable (Makefile, requirements.txt, etc)
+- Establir com es fara l'executable (Makefile, requirements.txt, etc) auto-py-to-exe
 
 ### Mòdul PTZ
 - ~~Definir com funcionara PTZ y ¿PTZVector?~~
+- Threat a PTZController que envii els request de moviment.
+- desactivar botons PTZ quan desconexió
 
 ### Mòdul CameraBox
 - ~~Definir retorn de funció (diccionari o llista?)~~
 - ~~Thread per la conexió~~
+- ~~Colors al statusLabel~~
 
 ### Mòdul CameraClient
 - Gestió de contrasenyes i usuaris
+- CameraClient propietat de MainWindow.
 - ~~Moure WSDLs a src~~
 
 ### Mòdul FeedBox
 - ~~Gestió de url amb autentificació inclosa~~
+- ~~Mida Live Feed dinàmica~~
+- Emprar Signal de conexió per començar Feed
+- Signal de desconexió quan es perd la comunicació
+- Treure feed al desconectar
+- Gestió de Zoom In/Out digital
   
 ### Mòdul Follower
 - Serveix per fer el seguiment de elements. (p.e: leds, pantalles, bombetes, motors...)
@@ -49,7 +64,7 @@
 ## Avanços:
 
 ### A dia 26/06/2023:
-- PTZ funcionant
+- Moviment de la càmara funcionant
 - Actuialitzacio UI (PTZ i Zoom)
 
 ### A dia 07/06/2023:

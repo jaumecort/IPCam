@@ -46,13 +46,13 @@ if __name__=="__main__":
     if broadcastIP=='l':
         broadcastIP='147.83.49.255'
     if broadcastIP=='d':
-        broadcastIP='147.83.49.78'
+        broadcastIP='255.255.255.255'
         
-    [ips, uris] = OnvifDiscovery(broadcastIP)
+    dev = OnvifDiscovery(broadcastIP)
     
-    for ip in ips:
+    for ip in dev.values():
         print(ip)
         
-    for uri in uris:
+    for uri in dev.keys():
         print(uri)
 
