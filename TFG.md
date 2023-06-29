@@ -14,6 +14,9 @@
   
 ### (C) Post-Processat
 - **Processat en Paral·lel**: Hem de ser capaços de processar diferents elements dintre del mateix feed de video, investigarem quin és el límit de aques processat simultani i evaluarem si 
-- 
+- **Registre de anomalies**: A banda del streaming i detecció en directe s'ha de dissenyar un sistema per guardar i mostrar posteriorment les anomalies de l'assaig segons la naturalessa d'aquestes
+- **Interacció amb altre programari**: Definir un protocol de comunicació per enviar dades a software d'inmunitat
+- **Diferents detectors d'anomalies**: Definir detectors minimament customitzables adecuats als assaigos vists al laboratori
 
 ### (D) Interfície d'Usuari
+- **Usabilitat**: Prioritzar sempre la facilitat d'us del software, la efectivitat a l'hora de fer el set-up pre assaig i la llegibilitat dels resultats post-assaig.

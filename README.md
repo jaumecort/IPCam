@@ -5,13 +5,20 @@
 
 ## Idees:
 - QRubberBand per seleccionar part de l'imatge
+- prints() per informar de debug
+- Console.afegirMissatge() per informar al usuari
+- JSON de configuració (darrer broadcast, timeout, darrera IP)
+- JSONs per credencials
   
 ## TO-DO List:
 
 ### Alta prioritat:
-- Arxius de configuració? Parametres?
 - Esquema general (UML)
 - Investigar diferents protocols de streaming disponibles
+
+### Device Manager:
+- Hora no funciona bé, falta gestionar TZ.
+- Revisar que es pot cambiar tot
   
 ### FollowersBox
 - Definir UI followers 

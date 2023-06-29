@@ -50,9 +50,12 @@ class CameraBox:
             self.disconectsignal.emit()
         else:
            self.discoverButton.setEnabled(False)
+           self.statusLabel.setText("Connecting...")
+           self.statusLabel.setStyleSheet('color: orange')
            cred = SimpleLogin.logindata()
            self.connecter.setCredentials(cred)
-           self.connecter.start()
+           if cred:
+            self.connecter.start()
 
     def layout_disconnect(self):
         self.statusLabel.setText("Disconnected")
@@ -125,7 +128,6 @@ class Connecter(QThread):
 
     def run(self):
         try:
-            print(self.cred)
             self.ipLineEdit.setEnabled(False)
             self.button.setEnabled(False)
             self.cameraClient = CameraClient(self.ipLineEdit.text(), self.cred)
@@ -137,6 +139,8 @@ class Connecter(QThread):
             self.button.setEnabled(True)
         except:
             self.console.afegirMissatge("Connection Failed! ["+self.ipLineEdit.text()+"]")
+            self.statusLabel.setText("Disconnected")
+            self.statusLabel.setStyleSheet('color: red')
             self.ipLineEdit.setEnabled(True)
             self.button.setEnabled(True)
             self.discoverButton.setEnabled(True)
