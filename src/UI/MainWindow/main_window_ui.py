@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file '.\etc\ui\MainWindow.ui'
+# Form implementation generated from reading ui file '.\src\UI\MainWindow\MainWindow.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.2
 #
@@ -20,6 +20,9 @@ class Ui_MainWindow(object):
         MainWindow.setSizePolicy(sizePolicy)
         MainWindow.setMinimumSize(QtCore.QSize(933, 0))
         MainWindow.setMaximumSize(QtCore.QSize(100000, 900))
+        MainWindow.setDocumentMode(False)
+        MainWindow.setDockNestingEnabled(False)
+        MainWindow.setUnifiedTitleAndToolBarOnMac(False)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -262,6 +265,11 @@ class Ui_MainWindow(object):
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 933, 22))
         self.menubar.setObjectName("menubar")
+        self.menuDevice = QtWidgets.QMenu(parent=self.menubar)
+        self.menuDevice.setTearOffEnabled(False)
+        self.menuDevice.setObjectName("menuDevice")
+        self.menuTools = QtWidgets.QMenu(parent=self.menubar)
+        self.menuTools.setObjectName("menuTools")
         MainWindow.setMenuBar(self.menubar)
         self.actionConnection = QtGui.QAction(parent=MainWindow)
         self.actionConnection.setObjectName("actionConnection")
@@ -283,6 +291,22 @@ class Ui_MainWindow(object):
         self.actionPTZout.setObjectName("actionPTZout")
         self.actionPTZstop = QtGui.QAction(parent=MainWindow)
         self.actionPTZstop.setObjectName("actionPTZstop")
+        self.actionDevice_Management = QtGui.QAction(parent=MainWindow)
+        self.actionDevice_Management.setIconVisibleInMenu(True)
+        self.actionDevice_Management.setObjectName("actionDevice_Management")
+        self.actionDiscover_Settings = QtGui.QAction(parent=MainWindow)
+        self.actionDiscover_Settings.setObjectName("actionDiscover_Settings")
+        self.actionPTZ_Settings = QtGui.QAction(parent=MainWindow)
+        self.actionPTZ_Settings.setObjectName("actionPTZ_Settings")
+        self.actionCredentials_Manager = QtGui.QAction(parent=MainWindow)
+        self.actionCredentials_Manager.setIconVisibleInMenu(False)
+        self.actionCredentials_Manager.setObjectName("actionCredentials_Manager")
+        self.menuDevice.addAction(self.actionDevice_Management)
+        self.menuDevice.addAction(self.actionCredentials_Manager)
+        self.menuTools.addAction(self.actionDiscover_Settings)
+        self.menuTools.addAction(self.actionPTZ_Settings)
+        self.menubar.addAction(self.menuDevice.menuAction())
+        self.menubar.addAction(self.menuTools.menuAction())
 
         self.retranslateUi(MainWindow)
         self.connectButton.clicked.connect(self.actionConnection.trigger) # type: ignore
@@ -321,6 +345,8 @@ class Ui_MainWindow(object):
         self.ConsoleBox.setTitle(_translate("MainWindow", "Console"))
         self.ViewBox.setTitle(_translate("MainWindow", "View"))
         self.FollowersBox.setTitle(_translate("MainWindow", "Followers"))
+        self.menuDevice.setTitle(_translate("MainWindow", "Device"))
+        self.menuTools.setTitle(_translate("MainWindow", "Tools"))
         self.actionConnection.setText(_translate("MainWindow", "Connect"))
         self.actionDiscover.setText(_translate("MainWindow", "Discover"))
         self.actionfollowersCheckChange.setText(_translate("MainWindow", "followersCheckChange"))
@@ -331,3 +357,7 @@ class Ui_MainWindow(object):
         self.actionPTZin.setText(_translate("MainWindow", "PTZin"))
         self.actionPTZout.setText(_translate("MainWindow", "PTZout"))
         self.actionPTZstop.setText(_translate("MainWindow", "PTZstop"))
+        self.actionDevice_Management.setText(_translate("MainWindow", "Device Management"))
+        self.actionDiscover_Settings.setText(_translate("MainWindow", "Discover Settings"))
+        self.actionPTZ_Settings.setText(_translate("MainWindow", "PTZ Settings"))
+        self.actionCredentials_Manager.setText(_translate("MainWindow", "Credentials Manager"))

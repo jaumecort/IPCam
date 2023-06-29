@@ -1,6 +1,6 @@
 import typing
 
-from PTZController.PTZController import PTZController
+from OnvifController.PTZController import PTZController
 
 from PyQt6.QtWidgets import *
 from PyQt6.QtCore import *
@@ -41,6 +41,11 @@ class PTZBox:
         except: 
             self.ptzSender = None
             self.console.afegirMissatge("PTZ not conected!")
+
+    def disconnectPTZ(self):
+        self.ptzSender = None
+        self.console.afegirMissatge("PTZ disconected")
+        self.ptzbox.setEnabled(False)
 
     # Quan s'apreta el botó de Up
     def moveup(self):

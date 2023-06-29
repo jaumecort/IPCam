@@ -1,5 +1,5 @@
 from PyQt6.QtCore import QObject
-from OnvifDiscovery.OnvifDiscoverer import OnvifDiscovery
+from OnvifController.OnvifDiscoverer import OnvifDiscovery
 
 from PyQt6.QtWidgets import *
 from PyQt6.QtCore import *
@@ -10,7 +10,7 @@ from UI.MainWindow.workers.FeedBox import *
 from UI.MainWindow.workers.PTZBox import *
 from UI.MainWindow.workers.ConsoleBox import *
 
-from CameraClient.CameraClient import CameraClient
+from OnvifController.CameraClient import CameraClient
 
 
 class CameraBox:
@@ -24,59 +24,50 @@ class CameraBox:
         self.feedBox:FeedBox=mainwindow.feedBox
         self.discoverButton=mainwindow.discoverButton
         self.ptzBox:PTZBox=mainwindow.ptzBox
+
+        self.disconectsignal = mainwindow.disconnectionSignal
         
         self.statusLabel.setText("Disconnected")
         self.statusLabel.setStyleSheet('color: red')
 
         ##Init dels objectes necessaris
         self.discoverer=Discoverer(self.console, self.ipLineEdit)
-        self.connecter=Connecter(self.statusLabel, self.button, self.ipLineEdit, self.console, self.discoverButton)
+        self.connecter=Connecter(self.statusLabel, self.button, self.ipLineEdit, self.console, self.discoverButton, mainwindow.connectionSignal, self.status_connected)
         self.cameraClient = None
 
         ## Init de les senyals necessaries
         mainwindow.actionDiscover.triggered.connect(self.discover)
+        mainwindow.actionConnection.triggered.connect(self.connect)
         self.discoverer.discoveries.connect(self.printDiscoveries)
-        self.connecter.connection.connect(self.setConnection)
         pass
 
     # Quan s'apreta el botó de connect:
     def connect(self):  
         if self.status_connected:
             self.cameraClient = None
-            self.statusLabel.setText("Disconnected")
-            self.statusLabel.setStyleSheet('color: red')
-            self.button.setText("Connect")
             self.status_connected=False
-            self.ipLineEdit.setEnabled(True)
-            self.feedBox.stopFeed()
-            self.discoverButton.setEnabled(True)
-            
+            self.layout_disconnect()
+            self.disconectsignal.emit()
         else:
            self.discoverButton.setEnabled(False)
            cred = SimpleLogin.logindata()
            self.connecter.setCredentials(cred)
            self.connecter.start()
+
+    def layout_disconnect(self):
+        self.statusLabel.setText("Disconnected")
+        self.statusLabel.setStyleSheet('color: red')
+        self.button.setText("Connect")
+        self.ipLineEdit.setEnabled(True)
+        self.discoverButton.setEnabled(True)
             
-    def setConnection(self, client:CameraClient):
-        self.cameraClient = client     
-        self.status_connected=True  
-        self.statusLabel.setText("Connected")
-        self.statusLabel.setStyleSheet('color: green')
-        self.console.afegirMissatge("Connection stablished ["+self.ipLineEdit.text()+"]")
-        self.button.setText("Disconnect")
-        self.button.setEnabled(True)
-        self.feedBox.startFeed(self.cameraClient.getStreamUri())
-        self.ptzBox.connectPTZ(self.cameraClient.mycam)
+
         
-        
-           
-    
     # Quan s'apreta el botó de Discover
     def discover(self):
         self.discoverButton.setEnabled(False)
         self.button.setEnabled(False)
         self.ipLineEdit.setEnabled(False)
-        self.console.afegirMissatge("Discovering devices")
         self.discoverer.start()
 
     def printDiscoveries(self, devs:dict):
@@ -95,33 +86,41 @@ class CameraBox:
 
 class Discoverer(QThread):
     discoveries=pyqtSignal(dict)
-
+    discoverytime = 3
+    bcip = "192.168.1.255"
     def __init__(self, console, ipline) -> None:
         super().__init__()
         self.console = console
         self.ipline = ipline
         pass
 
+    def setdtip(self, dt, ip):
+        self.discoverytime = dt
+        self.bcip = ip
+
     # Quan s'apreta el botó de Discover
     def run(self):
-        devs= OnvifDiscovery("255.255.255.255")
+        self.console.afegirMissatge("Discovering devices: Broadcast IP: "+self.bcip+" Timeout: "+str(self.discoverytime)+" seconds")
+        devs= OnvifDiscovery(self.bcip, self.discoverytime)
         self.discoveries.emit(devs)
 
 from UI.SimpleLogin.SimpleLogin import *
 class Connecter(QThread):
-    connection=pyqtSignal(CameraClient)
+    
     cred = {}
 
     def setCredentials(self, creds):
         self.cred = creds
 
-    def __init__(self, statusLabel, button, ipLineEdit, console, dbut) -> None:
+    def __init__(self, statusLabel, button, ipLineEdit, console, dbut, consignal, status) -> None:
         super().__init__()
         self.statusLabel = statusLabel
         self.button = button
         self.ipLineEdit = ipLineEdit
         self.console = console
         self.discoverButton = dbut
+        self.connection=consignal
+        self.status_connected = status
         pass
 
     def run(self):
@@ -131,6 +130,11 @@ class Connecter(QThread):
             self.button.setEnabled(False)
             self.cameraClient = CameraClient(self.ipLineEdit.text(), self.cred)
             self.connection.emit(self.cameraClient)
+            self.statusLabel.setText("Connected")
+            self.statusLabel.setStyleSheet('color: green')
+            self.console.afegirMissatge("Connection stablished ["+self.ipLineEdit.text()+"]")
+            self.button.setText("Disconnect")
+            self.button.setEnabled(True)
         except:
             self.console.afegirMissatge("Connection Failed! ["+self.ipLineEdit.text()+"]")
             self.ipLineEdit.setEnabled(True)

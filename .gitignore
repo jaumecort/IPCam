@@ -9,6 +9,7 @@ __pycache__/
 # Distribution / packaging
 .Python
 build/
+IPCam-dist/
 develop-eggs/
 dist/
 downloads/

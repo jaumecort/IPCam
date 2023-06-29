@@ -5,52 +5,32 @@
 
 ## Idees:
 - QRubberBand per seleccionar part de l'imatge
-- ~~Bloquejar ipLine si s'esta conectat~~
-- ~~Exepcio si ipline no es correcte~~
   
 ## TO-DO List:
 
 ### Alta prioritat:
-- ~~Procediment per conectar i emprar les càmeres amb FastCam.~~
-- Definir signals conex/desconex de caràcter general
-  
-### FastCam
-- ~~Adjustar la contrasenya de la camera Y~~
-  
-### UI
-- ~~Definir UI PTZ~~
-- Definir UI followers
-- ~~Mida Live Feed dinàmica~~
-- Popping widget per modificar configuració de la càmara
-- ~~Popping widget per fer log-in a la camera.~~
-- Definir creació de followers (a Mainwindow.py hi ha un exemple)
-  
-### Programari
-- ~~etc/FastCam Programa cmd per descobrir ip de la càmera i obrir vlc~~
 - Arxius de configuració? Parametres?
 - Esquema general (UML)
-- Establir com es fara l'executable (Makefile, requirements.txt, etc) auto-py-to-exe
+- Investigar diferents protocols de streaming disponibles
+  
+### FollowersBox
+- Definir UI followers 
+- Definir creació de followers (a Mainwindow.py hi ha un exemple)
 
-### Mòdul PTZ
-- ~~Definir com funcionara PTZ y ¿PTZVector?~~
+### PTZController
 - Threat a PTZController que envii els request de moviment.
-- desactivar botons PTZ quan desconexió
 
-### Mòdul CameraBox
-- ~~Definir retorn de funció (diccionari o llista?)~~
-- ~~Thread per la conexió~~
-- ~~Colors al statusLabel~~
+### CameraBox
+- Test de bugs conex/desconex
+- Comprovar IP valida
+- Gestionar excepcions
 
 ### Mòdul CameraClient
 - Gestió de contrasenyes i usuaris
-- CameraClient propietat de MainWindow.
-- ~~Moure WSDLs a src~~
-
+  
 ### Mòdul FeedBox
-- ~~Gestió de url amb autentificació inclosa~~
-- ~~Mida Live Feed dinàmica~~
 - Emprar Signal de conexió per començar Feed
-- Signal de desconexió quan es perd la comunicació
+- Signal de desconexió quan es perd el streaming
 - Treure feed al desconectar
 - Gestió de Zoom In/Out digital
   
@@ -63,9 +43,10 @@
 
 ## Avanços:
 
-### A dia 26/06/2023:
+### A dia 29/06/2023:
 - Moviment de la càmara funcionant
 - Actuialitzacio UI (PTZ i Zoom)
+- setup.py per generar la distribució de l'executable
 <p align="center">
 <img src="etc/img/UI-27-06-2023.png"  width="600" height="auto">
 </p>
@@ -82,7 +63,7 @@
 ### A dia 27/05/2023:
 - Es té un quadre de diàleg per presentar informació i errors
 - Es descobreixen les cameres accesibles mitjançant un broadcast UDP, en cas de descobriment, es canvia la ip automàtiament.
-- Es possible presentar l'imatge en directe d'una WebCam
+- Es possible presentar l'imatge en directe d'una WebCam amb OpenCV
 - Els controls per conectar-se i desconectarse mitjançant un client SOAP-Onvif a certa IP estàn preparats
 <p align="center">
 <img src="etc/img/UI-27-05-2023.png"  width="600" height="auto">
