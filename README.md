@@ -46,7 +46,7 @@
 ### A dia 29/06/2023:
 - Moviment de la càmara funcionant
 - Actuialitzacio UI (PTZ i Zoom)
-- setup.py per generar la distribució de l'executable
+- build/build.py per generar la distribució de l'executable
 <p align="center">
 <img src="etc/img/UI-27-06-2023.png"  width="600" height="auto">
 </p>
