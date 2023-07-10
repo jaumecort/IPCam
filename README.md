@@ -50,10 +50,26 @@
 
 ## Avanços:
 
+### A dia 10/07/2023:
+- Es possible accedir a l'informació proporcioanda per la càmara prement Device->Device Management
+- Es pot cambiar la configuració per descobrir càmeres a la xarxa. Aquesta, juntament amb la darrera IP a la que s'ha conectat el software queda guardada al arxiu config/connection_settings.json
+- Aquest esquema de configuració amb arxius JSON es replicara per la resta de dades a emmagatzemar
+```json
+{
+  "ip": "0",
+  "Broadcast IP": "192.168.1.255",
+  "Discovery time": 2
+}
+```
+<p align="center">
+<img src="etc/img/UI-10-07-2023.png"  width="200" height="auto">
+</p>
+
 ### A dia 29/06/2023:
 - Moviment de la càmara funcionant
 - Actuialitzacio UI (PTZ i Zoom)
 - build/build.py per generar la distribució de l'executable
+- Aquesta primera versió queda instalada a l'ordinador del laboratori
 <p align="center">
 <img src="etc/img/UI-27-06-2023.png"  width="600" height="auto">
 </p>
