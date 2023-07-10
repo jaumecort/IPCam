@@ -14,7 +14,7 @@
 }
 ```
 <p align="center">
-<img src="etc/img/UI-10-07-2023.png"  width="200" height="auto">
+<img src="/img/UI-10-07-2023.png"  width="200" height="auto">
 </p>
 
 ### A dia 29/06/2023:
@@ -23,7 +23,7 @@
 - build/build.py per generar la distribució de l'executable
 - Aquesta primera versió queda instalada a l'ordinador del laboratori
 <p align="center">
-<img src="etc/img/UI-27-06-2023.png"  width="600" height="auto">
+<img src="/img/UI-27-06-2023.png"  width="600" height="auto">
 </p>
 
 ### A dia 07/06/2023:
@@ -32,7 +32,7 @@
 - Quan una camera està conectada, no es deixa ni canviar la IP ni descobrir-ne de noves
 - Actuialització de la UI, es presenta com podrien estar mostrats els "Followers"
 <p align="center">
-<img src="etc/img/UI-07-06-2023.png"  width="600" height="auto">
+<img src="/img/UI-07-06-2023.png"  width="600" height="auto">
 </p>
 
 ### A dia 27/05/2023:
@@ -41,12 +41,12 @@
 - Es possible presentar l'imatge en directe d'una WebCam amb OpenCV
 - Els controls per conectar-se i desconectarse mitjançant un client SOAP-Onvif a certa IP estàn preparats
 <p align="center">
-<img src="etc/img/UI-27-05-2023.png"  width="600" height="auto">
+<img src="/img/UI-27-05-2023.png"  width="600" height="auto">
 </p>
 
 ### A dia 25/05/2023:
-- Es fa un script "FastCam" ubicat a etc/FastCam per trobar una camara a la xarxa, i obrir el reproductor VLC amb el streaming d'aquesta.
+- Es fa un script "FastCam" ubicat a /FastCam per trobar una camara a la xarxa, i obrir el reproductor VLC amb el streaming d'aquesta.
 - Es deixa l'script preparat al ordinador de la càmara FAR per realizar els assaigos d'inmunitat.
 <p align="center">
-<img src="etc/img/Captura.PNG"  width="600" height="auto">
+<img src="/img/Captura.PNG"  width="600" height="auto">
 </p>
