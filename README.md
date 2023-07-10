@@ -1,18 +1,16 @@
 # IPCam
 
-## Idees Marc:
-- 
+## Definició del TFG
+[Monitoring System](TFG.md) *Marc Aragón*
 
 ## Idees:
 - QRubberBand per seleccionar part de l'imatge
-- prints() per informar de debug
-- Console.afegirMissatge() per informar al usuari
-- JSON de configuració (darrer broadcast, timeout, darrera IP)
+- ~~prints() per informar de debug~~
+- ~~Console.afegirMissatge() per informar al usuari~~
+- ~~JSON de configuració (darrer broadcast, timeout, darrera IP)~~
 - JSONs per credencials
   
 ## TO-DO List:
-
-### Alta prioritat:
 - Esquema general (UML)
 - Investigar diferents protocols de streaming disponibles
 
@@ -28,14 +26,13 @@
 - Threat a PTZController que envii els request de moviment.
 
 ### CameraBox
-- Test de bugs conex/desconex
-- Comprovar IP valida
-- Gestionar excepcions
+- Test de bugs conex/desconex amb cameres IP
 
 ### Mòdul CameraClient
 - Gestió de contrasenyes i usuaris
   
 ### Mòdul FeedBox
+- Gestió del tamany del Feed
 - Emprar Signal de conexió per començar Feed
 - Signal de desconexió quan es perd el streaming
 - Treure feed al desconectar
