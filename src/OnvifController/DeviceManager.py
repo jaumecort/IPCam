@@ -88,4 +88,4 @@ class DeviceManager(QDialog, Ui_DeviceManager):
             except:
                 QMessageBox.critical(None, "Exception","Unable to get data")
         else:
-            QMessageBox.critical(None, "Conexion Error", "Any camera connected")
+            QMessageBox.critical(None, "Conexion Error", "No camera connected")

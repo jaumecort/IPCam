@@ -7,12 +7,20 @@ class CameraClient:
     username = ''
     password = ''
 
+    isWebCam = False
+
     devicemgmt_service = None
     media_service = None
 
     device_information = None
 
     def __init__(self, ip, cred) -> None:
+        if (ip=='0'):
+            print('Webcam')
+            self.isWebCam = True
+            self.ip = 0
+            return 
+
         self.username=cred[0]
         self.password=cred[1]
         print("Trying to connect with usr: "+self.username+" and pssw: "+self.password)
@@ -24,14 +32,12 @@ class CameraClient:
         except Exception as ex:
             print(ex)
 
-        
         self.profiles = self.media_service.GetProfiles()
         #print(self.profiles)
-
-        pass
     
 
     def getStreamUri(self):
+        if(self.isWebCam): return 0
         request =  {
             'StreamSetup': {
                 'Stream': 'RTP-Unicast',

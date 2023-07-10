@@ -20,7 +20,7 @@ class VideoFeeder(QThread):
             self.uri = uri
             
     def run(self):
-        print("rebent feed de: "+ self.uri)
+        #print("rebent feed de: "+ str(self.uri))
         if self.uri=='0': self.uri=0
         cap = cv2.VideoCapture(self.uri)
         #while True:

@@ -15,6 +15,8 @@ from UI.MainWindow.widgets import *
 from OnvifController.DeviceManager import *
 from OnvifController.DiscoverSettings import *
 
+from Tools.WebCamConnecter import *
+
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -30,7 +32,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.cameraclient:CameraClient = None
         self.connectionSignal.connect(self.setConnection)
         self.disconnectionSignal.connect(self.setdisConnection)
-
+        
+        self.DiscovererSettings = DiscovererSettings(self)
 
 
         #vf.start()
@@ -43,7 +46,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         # Aqui les eines de la barra
         self.DeviceManager = DeviceManager(self)
-        self.DiscovererSettings = DiscovererSettings(self.cameraBox.discoverer, self)
+        self.webcamConnecter = WebCamConnecter(self)
 
         
 
@@ -63,8 +66,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.cameraclient = client     
         self.cameraBox.status_connected = True
         self.DeviceManager.cameraclient = client
-        self.feedBox.startFeed(self.cameraclient.getStreamUri())
-        self.ptzBox.connectPTZ(self.cameraclient.mycam)
+        try:
+            self.feedBox.startFeed(self.cameraclient.getStreamUri())
+        except Exception as e:
+            ConsoleBox.afegirMissatge(str(e))
+        try:
+            self.ptzBox.connectPTZ(self.cameraclient.mycam)
+        except:
+            ConsoleBox.afegirMissatge("PTZ not found")
 
     def setdisConnection(self):
         self.cameraBox.status_connected = False

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>933</width>
-    <height>550</height>
+    <width>648</width>
+    <height>261</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -18,7 +18,7 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>933</width>
+    <width>648</width>
     <height>0</height>
    </size>
   </property>
@@ -62,7 +62,7 @@
       <item>
        <layout class="QHBoxLayout" name="CameraPTZLayout">
         <property name="spacing">
-         <number>5</number>
+         <number>6</number>
         </property>
         <property name="sizeConstraint">
          <enum>QLayout::SetDefaultConstraint</enum>
@@ -86,7 +86,7 @@
           </property>
           <property name="maximumSize">
            <size>
-            <width>180</width>
+            <width>169</width>
             <height>114</height>
            </size>
           </property>
@@ -472,6 +472,78 @@
          <number>0</number>
         </property>
         <item>
+         <widget class="QGroupBox" name="FollowersBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="title">
+           <string>Followers</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>3</number>
+           </property>
+           <property name="topMargin">
+            <number>3</number>
+           </property>
+           <property name="rightMargin">
+            <number>3</number>
+           </property>
+           <property name="bottomMargin">
+            <number>3</number>
+           </property>
+           <item>
+            <widget class="QScrollArea" name="FollowersScrollArea">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>250</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="widgetResizable">
+              <bool>true</bool>
+             </property>
+             <widget class="QWidget" name="FollowersScrollAreaWidgetContents">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>18</width>
+                <height>69</height>
+               </rect>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <layout class="QVBoxLayout" name="FollowersLayout"/>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
          <widget class="QGroupBox" name="ViewBox">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -481,8 +553,8 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>640</width>
-            <height>360</height>
+            <width>296</width>
+            <height>0</height>
            </size>
           </property>
           <property name="title">
@@ -520,88 +592,22 @@
              </property>
              <property name="minimumSize">
               <size>
-               <width>640</width>
-               <height>360</height>
+               <width>0</width>
+               <height>0</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>1280</width>
-               <height>720</height>
+               <width>10000</width>
+               <height>10000</height>
               </size>
              </property>
              <property name="text">
               <string/>
              </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item>
-         <widget class="QGroupBox" name="FollowersBox">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="title">
-           <string>Followers</string>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout">
-           <property name="leftMargin">
-            <number>3</number>
-           </property>
-           <property name="topMargin">
-            <number>3</number>
-           </property>
-           <property name="rightMargin">
-            <number>3</number>
-           </property>
-           <property name="bottomMargin">
-            <number>3</number>
-           </property>
-           <item>
-            <widget class="QScrollArea" name="FollowersScrollArea">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
-             <property name="minimumSize">
-              <size>
-               <width>250</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="widgetResizable">
-              <bool>true</bool>
-             </property>
-             <widget class="QWidget" name="FollowersScrollAreaWidgetContents">
-              <property name="geometry">
-               <rect>
-                <x>0</x>
-                <y>0</y>
-                <width>18</width>
-                <height>358</height>
-               </rect>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <layout class="QVBoxLayout" name="FollowersLayout"/>
-             </widget>
             </widget>
            </item>
           </layout>
@@ -618,7 +624,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>933</width>
+     <width>648</width>
      <height>22</height>
     </rect>
    </property>
@@ -631,6 +637,8 @@
     </property>
     <addaction name="actionDevice_Management"/>
     <addaction name="actionCredentials_Manager"/>
+    <addaction name="separator"/>
+    <addaction name="actionWebCam_Connection"/>
    </widget>
    <widget class="QMenu" name="menuTools">
     <property name="title">
@@ -716,6 +724,11 @@
    </property>
    <property name="iconVisibleInMenu">
     <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionWebCam_Connection">
+   <property name="text">
+    <string>WebCam Connection</string>
    </property>
   </action>
  </widget>
