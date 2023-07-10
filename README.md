@@ -54,8 +54,9 @@
 - Es possible accedir a l'informació proporcioanda per la càmara prement Device->Device Management
 - Es pot cambiar la configuració per descobrir càmeres a la xarxa. Aquesta, juntament amb la darrera IP a la que s'ha conectat el software queda guardada al arxiu config/connection_settings.json
 - Aquest esquema de configuració amb arxius JSON es replicara per la resta de dades a emmagatzemar
+  
+*config/connection_settings.json:*
 ```json
-config/connection_settings.json
 {
   "ip": "0",
   "Broadcast IP": "192.168.1.255",
