@@ -9,7 +9,7 @@
 **Llista de coses a fer:**\
 [To-Do List](TODO.md)
 
-**Idees varies:**\
+**Idees varies:**
 - QRubberBand per seleccionar part de l'imatge
 - ~~prints() per informar de debug~~
 - ~~Console.afegirMissatge() per informar al usuari~~
