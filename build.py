@@ -16,7 +16,7 @@ if os.path.exists(dist_path):
     shutil.rmtree(dist_path)
 
 # One file installation
-os.system('pyinstaller --noconfirm --onefile --windowed --specpath '+spec_path+' --distpath '+dist_path+' --icon "'+project_path+'etc/img/SecurityCamera_icon-icons.com_55219.ico" --name '+app_name+'  --paths "'+source_path+'"  "'+source_path+main_script_name+'"')
+os.system('pyinstaller --noconfirm --onefile --windowed --specpath '+spec_path+' --distpath '+dist_path+' --icon "'+project_path+'docs/img/SecurityCamera_icon-icons.com_55219.ico" --name '+app_name+'  --paths "'+source_path+'"  "'+source_path+main_script_name+'"')
 
 # Needed directories
 for dir in data_dirs_paths:
